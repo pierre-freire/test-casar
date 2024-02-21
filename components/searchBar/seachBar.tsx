@@ -12,9 +12,9 @@ function SeachBar() {
 	}
 
 	return (
-		<div className="relative w-[668px] flex items-center">
+		<div className="relative w-[668px] flex items-center mr-[1rem]">
 			<input
-				className="p-[10px] pr-[40px] rounded-md border-solid border-2 border-slate-300 outline-none w-full text-slate-700"
+				className="p-[10px] pr-[40px] rounded-md border-solid border-[1px] border-slate-300 outline-none w-full text-slate-700"
 				aria-label="Pesquisa"
 				placeholder="Buscar usuário"
 				value={search}

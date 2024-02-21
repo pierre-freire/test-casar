@@ -1,11 +1,9 @@
-"use client";
-
 import SeachBar from "../searchBar/seachBar";
 import FavoritesButton from "../favoritesButton";
 
 function Header() {
 	return (
-		<header className="pl-4 flex justify-between border-solid border-b-2 border-slate-300">
+		<header className="pl-4 flex justify-between shadow-[inset_0_-1px_0_0_rgba(203,213,225)]">
 			<SeachBar />
 			<FavoritesButton />
 		</header>
