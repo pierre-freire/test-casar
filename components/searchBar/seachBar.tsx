@@ -21,7 +21,7 @@ function SeachBar() {
 				onChange={(e) => setSearch(e.target.value)}
 			/>
 			<button
-				className="absolute top-[1px] right-[2px] p-[10px]"
+				className="absolute top-[20px] right-[2px] p-[10px]"
 				onClick={handleSearch}
 			>
 				<FontAwesomeIcon
