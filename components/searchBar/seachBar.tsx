@@ -16,13 +16,13 @@ function SeachBar() {
 	}
 
 	function redirectSearch() {
-		router.push(`/not_found?search=${search}`);
+		router.push(`/not_found?user=${search}`);
 	}
 
 	return (
-		<div className="relative w-full sm:max-w-[668px] mb-[20px] sm:m-[20px] flex items-center border-solid border-[1px] border-slate-300">
+		<div className="relative w-full sm:max-w-[668px] mb-[20px] sm:m-[20px] flex items-center rounded border-solid border-[1px] border-slate-300">
 			<input
-				className="p-[10px] outline-none w-full text-slate-700"
+				className="p-[10px] rounded outline-none w-full text-slate-700"
 				aria-label="Pesquisa"
 				placeholder="Buscar usuário"
 				value={search}

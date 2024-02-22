@@ -6,11 +6,11 @@ import { useSearchParams } from "next/navigation";
 
 export default function NotFound() {
 	const searchParams = useSearchParams();
-	const search = searchParams.get("search");
+	const user = searchParams.get("user");
 
 	return (
 		<main className="p-4 mt-10 flex flex-col items-center justify-center gap-2 text-slate-600 text-center">
-			<h2 className="text-xl font-semibold text-[#32C0C6]">{`"${search}"`}</h2>
+			<h2 className="text-xl font-semibold text-[#32C0C6]">{`"${user}"`}</h2>
 			<h2 className="text-xl font-semibold">Nenhum usuário encontrado</h2>
 			<h3 className="text-base font-normal">
 				Verifique se a escrita está correta ou tente novamente
