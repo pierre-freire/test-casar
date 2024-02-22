@@ -9,7 +9,13 @@ function SeachBar() {
 	const router = useRouter();
 	const [search, setSearch] = useState("");
 
-	function handleSearch() {
+	function handleEnter(key: string) {
+		if (key === "Enter") {
+			return redirectSearch();
+		}
+	}
+
+	function redirectSearch() {
 		router.push(`/not_found?search=${search}`);
 	}
 
@@ -21,8 +27,9 @@ function SeachBar() {
 				placeholder="Buscar usuário"
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
+				onKeyDown={(e) => handleEnter(e.key)}
 			/>
-			<button className="p-[10px]" onClick={handleSearch}>
+			<button className="p-[10px]" onClick={redirectSearch}>
 				<FontAwesomeIcon
 					icon={faMagnifyingGlass}
 					className="h-[20px] text-slate-500 "

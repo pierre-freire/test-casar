@@ -9,7 +9,7 @@ export default function NotFound() {
 	const search = searchParams.get("search");
 
 	return (
-		<main className="p-4 mt-10 flex flex-col items-center justify-center gap-2 text-slate-600">
+		<main className="p-4 mt-10 flex flex-col items-center justify-center gap-2 text-slate-600 text-center">
 			<h2 className="text-xl font-semibold text-[#32C0C6]">{`"${search}"`}</h2>
 			<h2 className="text-xl font-semibold">Nenhum usuário encontrado</h2>
 			<h3 className="text-base font-normal">
