@@ -3,7 +3,7 @@ import UserImage from "../../public/not_found.svg";
 
 function UserCard() {
 	return (
-		<div className="flex flex-col items-center w-[448px] px-[24px] py-[40px] border-solid border-[1px] border-slate-300 rounded">
+		<div className="flex flex-col items-center w-[448px] lg:min-w-[360px] sm:px-[24px] py-[40px] border-solid border-[1px] border-slate-300 rounded">
 			<Image
 				src={UserImage}
 				width={200}
