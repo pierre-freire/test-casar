@@ -14,18 +14,15 @@ function SeachBar() {
 	}
 
 	return (
-		<div className="relative w-[668px] flex items-center mr-[1rem]">
+		<div className="relative w-full sm:max-w-[668px] mb-[20px] sm:m-[20px] flex items-center border-solid border-[1px] border-slate-300">
 			<input
-				className="p-[10px] pr-[40px] rounded-md border-solid border-[1px] border-slate-300 outline-none w-full text-slate-700"
+				className="p-[10px] outline-none w-full text-slate-700"
 				aria-label="Pesquisa"
 				placeholder="Buscar usuário"
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 			/>
-			<button
-				className="absolute top-[20px] right-[2px] p-[10px]"
-				onClick={handleSearch}
-			>
+			<button className="p-[10px]" onClick={handleSearch}>
 				<FontAwesomeIcon
 					icon={faMagnifyingGlass}
 					className="h-[20px] text-slate-500 "

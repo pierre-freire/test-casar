@@ -3,7 +3,7 @@ import SearchImage from "../public/search.svg";
 
 export default function Home() {
 	return (
-		<main className="p-4 mt-10 flex flex-col items-center justify-center gap-2 text-slate-600">
+		<main className="p-4 mt-10 flex flex-col items-center justify-center gap-2 text-slate-600 text-center">
 			<h2 className="text-xl font-semibold">
 				Procure pelo Nome ou Nome de Usuário
 			</h2>
