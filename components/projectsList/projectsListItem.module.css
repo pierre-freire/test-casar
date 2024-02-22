@@ -4,5 +4,22 @@
 	height: 16px;
 	border-radius: 50px;
 	display: block;
-	background-color: red;
+	background-color: gray;
+	margin-right: 8px;
+}
+
+.TypeScript::before {
+	background-color: #3276c6;
+}
+
+.JavaScript::before {
+	background-color: #f5da79;
+}
+
+.HTML::before {
+	background-color: #ff4343;
+}
+
+.Vue::before {
+	background-color: #68b280;
 }

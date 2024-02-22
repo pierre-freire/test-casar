@@ -1,17 +1,29 @@
 import ProjectsListItem from "./projectsListItem";
 
-function ProjectsList() {
+interface IProjectsList {
+	repos: [
+		{
+			name: string;
+			id: number;
+			description: string;
+			language: string;
+			updated_at: Date;
+		}
+	];
+}
+
+function ProjectsList({ repos }: IProjectsList) {
 	return (
 		<ul className="flex flex-col gap-2 w-full items-center">
-			{["0", "1", "2", "3", "4"].map((elm, index) => {
+			{repos.map((elm, index) => {
 				return (
 					<ProjectsListItem
 						key={index}
-						id={elm}
-						name="Nome do projeto"
-						description="Aplicativo de visualização de Pokémon utilizando o PokeAPI.co - Construído em React Native (Expo)"
-						tech="typescript"
-						updated="Updated on 17 Apr 2021"
+						id={elm.id}
+						name={elm.name}
+						description={elm.description}
+						tech={elm.language}
+						updated={elm.updated_at}
 					/>
 				);
 			})}

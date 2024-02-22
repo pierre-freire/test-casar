@@ -1,12 +1,14 @@
 import styles from "./projectsListItem.module.css";
 import HeartHandler from "./heartHandler";
+import moment from "moment";
+import "moment/locale/pt-br";
 
 interface IProjectListItem {
 	name: string;
-	id: string;
+	id: number;
 	description: string;
 	tech: string;
-	updated: string;
+	updated: Date;
 }
 
 function ProjectsListItem({
@@ -25,9 +27,12 @@ function ProjectsListItem({
 				<HeartHandler id={id} />
 			</div>
 			<p className="text-sm text-[#8C8C8C] max-w-[560px]">{description}</p>
-			<p className={`text-xs mt-[16px] ${styles.tech} flex items-center gap-2`}>
-				{tech} <span className="ml-[24px]">{updated}</span>
-			</p>
+			<div className={`text-xs mt-[16px] grid items-center gap-1 grid-cols-3`}>
+				<p className={`flex ${styles.tech} ${styles[tech]}`}>{tech}</p>
+				<span className="grid-span-1">
+					Atualizado em {moment(updated).locale("pt-br").format("DD MMM YYYY")}
+				</span>
+			</div>
 		</li>
 	);
 }

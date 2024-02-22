@@ -6,7 +6,7 @@ import { Favorites_data } from "@/app/context/favorites";
 import { useContext } from "react";
 
 interface IHeartHandler {
-	id: string;
+	id: number;
 }
 
 function HeartHandler({ id }: IHeartHandler) {
