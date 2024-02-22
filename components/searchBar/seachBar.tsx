@@ -16,7 +16,7 @@ function SeachBar() {
 	}
 
 	function redirectSearch() {
-		router.push(`/not_found?user=${search}`);
+		router.push(`/user?user=${search}`);
 	}
 
 	return (
