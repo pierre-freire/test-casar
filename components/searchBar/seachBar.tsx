@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SeachBar() {
+	const router = useRouter();
 	const [search, setSearch] = useState("");
 
 	function handleSearch() {
-		console.log("implementar redirecionamento para pagina com resultados");
+		router.push(`/not_found?search=${search}`);
 	}
 
 	return (
