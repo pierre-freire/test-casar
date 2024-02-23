@@ -1,31 +1,30 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 export const Favorites_data = createContext();
 
 function FavoritesContext({ children }) {
 	const [favorites, setFavorites] = useState([]);
 
-	useEffect(() => {
-		console.log("favorites: ", favorites);
-	}, [favorites]);
-
-	function addFavorite(id) {
+	function addFavorite(elm) {
 		const newFavorites = [...favorites];
-		newFavorites.push(id);
+		newFavorites.push(elm);
 		setFavorites(newFavorites);
 	}
 
-	function removeFavorite(id) {
-		const newFavorites = favorites.filter((elm) => elm !== id);
+	function removeFavorite(elm) {
+		const newFavorites = favorites.filter((fav) => fav.id !== elm.id);
 		setFavorites(newFavorites);
 	}
 
-	function isFavorite(id) {
-		return favorites.includes(id);
+	function isFavorite(elm) {
+		if (favorites.filter((value) => value.id == elm.id).length > 0) {
+			return true;
+		}
+		return false;
 	}
 
-	function handleFavorites(id) {
-		if (isFavorite(id)) return removeFavorite(id);
-		addFavorite(id);
+	function handleFavorites(elm) {
+		if (isFavorite(elm)) return removeFavorite(elm);
+		addFavorite(elm);
 	}
 
 	return (

@@ -8,18 +8,18 @@
 	margin-right: 8px;
 }
 
-.TypeScript::before {
+.typescript::before {
 	background-color: #3276c6;
 }
 
-.JavaScript::before {
+.javascript::before {
 	background-color: #f5da79;
 }
 
-.HTML::before {
+.html::before {
 	background-color: #ff4343;
 }
 
-.Vue::before {
+.vue::before {
 	background-color: #68b280;
 }

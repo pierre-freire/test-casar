@@ -3,26 +3,32 @@
 import SolidHeart from "./solidHeart";
 import RegularHeart from "./regularHeart";
 import { Favorites_data } from "@/app/context/favorites";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 interface IHeartHandler {
-	id: number;
+	elm: {
+		name: string;
+		id: number;
+		description: string;
+		language: string;
+		updated_at: Date;
+	};
 }
 
-function HeartHandler({ id }: IHeartHandler) {
+function HeartHandler({ elm }: IHeartHandler) {
 	const { isFavorite, handleFavorites } = useContext(Favorites_data);
 
 	function correctHeart() {
-		if (isFavorite(id)) return <SolidHeart />;
+		if (isFavorite(elm)) return <SolidHeart />;
 		return <RegularHeart />;
 	}
 
 	return (
 		<button
 			className={`border-solid border-[1px] rounded-full px-[8px] ${
-				isFavorite(id) ? "border-[#32c0c6]" : "bg-[#F3F3F5]"
+				isFavorite(elm) ? "border-[#32c0c6]" : "bg-[#F3F3F5]"
 			}`}
-			onClick={() => handleFavorites(id)}
+			onClick={() => handleFavorites(elm)}
 		>
 			{correctHeart()}
 		</button>
