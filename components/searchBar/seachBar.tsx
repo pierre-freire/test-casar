@@ -20,7 +20,7 @@ function SeachBar() {
 	}
 
 	return (
-		<div className="relative w-full sm:max-w-[668px] mb-[20px] sm:m-[20px] flex items-center rounded border-solid border-[1px] border-slate-300">
+		<div className="relative w-full sm:max-w-[668px] mb-[20px] sm:m-[20px] flex items-center sm:rounded border-solid border-b-[1px] sm:border-[1px] border-slate-300">
 			<input
 				className="p-[10px] rounded outline-none w-full text-slate-700"
 				aria-label="Pesquisa"
