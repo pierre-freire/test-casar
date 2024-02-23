@@ -13,6 +13,9 @@ interface IProjectsList {
 }
 
 function ProjectsList({ repos }: IProjectsList) {
+	if (repos === undefined || repos.length < 1)
+		return <h2>Não existem repositorios</h2>;
+
 	return (
 		<ul className="flex flex-col gap-2 w-full items-center">
 			{repos.map((elm, index) => {
@@ -22,8 +25,8 @@ function ProjectsList({ repos }: IProjectsList) {
 						id={elm.id}
 						name={elm.name}
 						description={elm.description}
-						tech={elm.language}
-						updated={elm.updated_at}
+						language={elm.language}
+						updated_at={elm.updated_at}
 					/>
 				);
 			})}

@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { searchUser, getUserRepos } from "@/util/API";
 import UserCard from "@/components/userCard";
 import ProjectsList from "@/components/projectsList";
+import { useRouter } from "next/navigation";
 
 interface IUserState {
 	avatar_url: string;
@@ -33,23 +34,39 @@ export default function User() {
 		]
 	>();
 
+	const router = useRouter();
 	const searchParams = useSearchParams();
 	const user = searchParams.get("user");
+	const [loading, setLoading] = useState(true);
+
+	function redirectError() {
+		return router.push(`/not_found?user=${user}`);
+	}
 
 	async function getUser() {
-		if (user === null) return;
-		const userData = await searchUser(user);
+		setLoading(true);
 
-		setUserState(userData);
-		const reposData = await getUserRepos(user);
-		console.log(reposData);
-		setRepos(reposData);
+		if (user === null) return redirectError();
+
+		try {
+			const userData = await searchUser(user);
+			setUserState(userData);
+
+			const reposData = await getUserRepos(user);
+			setRepos(reposData);
+
+			setLoading(false);
+		} catch (error) {
+			redirectError();
+		}
 	}
 
 	useEffect(() => {
 		getUser();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [user]);
+
+	if (loading) return <></>;
 
 	return (
 		<main className="p-4 mt-10 flex flex-col lg:flex-row lg:items-start items-center justify-center gap-2 text-slate-600 text-center">
