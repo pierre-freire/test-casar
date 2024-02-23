@@ -38,7 +38,7 @@ function ProjectsListItem({
 			<div className={`text-xs mt-[16px] grid items-center gap-1 grid-cols-3`}>
 				<p
 					className={`flex ${styles.tech} ${
-						styles[language.toLocaleLowerCase()]
+						styles[language?.toLocaleLowerCase()]
 					}`}
 				>
 					{language}

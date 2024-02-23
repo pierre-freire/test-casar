@@ -6,6 +6,7 @@ import { searchUser, getUserRepos } from "@/util/API";
 import UserCard from "@/components/userCard";
 import ProjectsList from "@/components/projectsList";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/loading";
 
 interface IUserState {
 	avatar_url: string;
@@ -66,7 +67,12 @@ export default function User() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
 
-	if (loading) return <></>;
+	if (loading)
+		return (
+			<main className="w-full h-[400px] flex justify-center items-center">
+				<Loading />
+			</main>
+		);
 
 	return (
 		<main className="p-4 mt-10 flex flex-col lg:flex-row lg:items-start items-center justify-center gap-2 text-slate-600 text-center">
