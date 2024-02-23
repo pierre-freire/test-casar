@@ -2,6 +2,8 @@ import styles from "./projectsListItem.module.css";
 import HeartHandler from "./heartHandler";
 import moment from "moment";
 import "moment/locale/pt-br";
+import { Favorites_data } from "@/app/context/favorites";
+import { useContext } from "react";
 
 interface IProjectListItem {
 	name: string;
@@ -18,6 +20,8 @@ function ProjectsListItem({
 	language,
 	updated_at,
 }: IProjectListItem) {
+	const { isFavorite, handleFavorites } = useContext(Favorites_data);
+
 	return (
 		<li className="text-left border-solid border-[1px] border-slate-300 rounded p-[16px] w-full max-w-[900px]">
 			<div className="flex justify-between">
@@ -25,12 +29,15 @@ function ProjectsListItem({
 					{name}
 				</h2>
 				<HeartHandler
-					elm={{
-						id: id,
-						name: name,
-						description: description,
-						language: language,
-						updated_at: updated_at,
+					isFavorite={isFavorite(id)}
+					heartClick={() => {
+						handleFavorites({
+							name: name,
+							id: id,
+							description: description,
+							language: language,
+							updated_at: updated_at,
+						});
 					}}
 				/>
 			</div>

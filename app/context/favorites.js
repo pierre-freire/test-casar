@@ -15,15 +15,15 @@ function FavoritesContext({ children }) {
 		setFavorites(newFavorites);
 	}
 
-	function isFavorite(elm) {
-		if (favorites.filter((value) => value.id == elm.id).length > 0) {
+	function isFavorite(id) {
+		if (favorites.filter((elm) => elm.id === id).length > 0) {
 			return true;
 		}
 		return false;
 	}
 
 	function handleFavorites(elm) {
-		if (isFavorite(elm)) return removeFavorite(elm);
+		if (isFavorite(elm.id)) return removeFavorite(elm);
 		addFavorite(elm);
 	}
 
