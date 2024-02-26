@@ -1,25 +1,23 @@
-import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Page from "../app/page";
+import Home from "../app/page";
 
-test("Mount home page component", () => {
-	render(<Page />);
-});
+describe("testing Home page", () => {
+	it("correctly render heading 1", () => {
+		render(<Home />);
+		const title = screen.getByRole("heading", { level: 1 });
+		expect(title.textContent).toBe("Procure pelo Nome ou Nome de Usuário");
+	});
 
-test("Home page render heading 1", () => {
-	expect(
-		screen.getByRole("heading", {
-			level: 1,
-			name: "Procure pelo Nome ou Nome de Usuário",
-		})
-	).toBeDefined();
-});
+	it("correctly render heading 2", () => {
+		render(<Home />);
+		const title = screen.getByRole("heading", { level: 2 });
+		expect(title.textContent).toBe(
+			"Encontre os repositórios de algum usuário digitando no campo acima"
+		);
+	});
 
-test("Home page render heading 2", () => {
-	expect(
-		screen.getByRole("heading", {
-			level: 2,
-			name: "Encontre os repositórios de algum usuário digitando no campo acima",
-		})
-	).toBeDefined();
+	it("correctly render image", () => {
+		const { getByAltText } = render(<Home />);
+		getByAltText("Picture of someone searching");
+	});
 });
