@@ -1,4 +1,6 @@
 import ProjectsListItem from "./projectsListItem";
+import NoData from "@/public/no_data.svg";
+import Image from "next/image";
 
 interface IProjectsList {
 	repos?: Array<{
@@ -12,10 +14,21 @@ interface IProjectsList {
 
 function ProjectsList({ repos }: IProjectsList) {
 	if (repos === undefined || repos.length < 1)
-		return <h2>Não existem repositorios</h2>;
+		return (
+			<>
+				<h2>Não existem repositórios</h2>
+				<Image
+					src={NoData}
+					width={230}
+					className="h-auto mt-[48px]"
+					alt="Picture of no repositories to be shown"
+					priority
+				/>
+			</>
+		);
 
 	return (
-		<ul className="flex flex-col gap-2 w-full items-center">
+		<ul className="flex flex-col gap-2 w-full max-w-[900px] items-center">
 			{repos.map((elm, index) => {
 				return (
 					<ProjectsListItem

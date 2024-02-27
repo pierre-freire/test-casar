@@ -73,9 +73,16 @@ export default function User({ params }: { params: { user: string } }) {
 		);
 
 	return (
-		<main className="p-4 mt-10 flex flex-col lg:flex-row lg:items-start items-center justify-center gap-2 text-slate-600 text-center">
+		<main className="p-4 mt-10 flex flex-col lg:flex-row lg:items-start items-center justify-center gap-[48px] text-slate-600 text-center">
 			<UserCard user={userState} />
-			{repos !== undefined && <ProjectsList repos={repos} />}
+			{repos !== undefined && (
+				<div className="w-full max-w-[900px]">
+					<h1 className="text-xl font-semibold mb-[16px] text-left text-[#32C0C6]">
+						Repositórios
+					</h1>
+					<ProjectsList repos={repos} />
+				</div>
+			)}
 		</main>
 	);
 }
