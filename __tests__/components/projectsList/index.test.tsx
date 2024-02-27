@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import ProjectsList from "@/components/projectsList";
 import FavoritesContext from "../../../app/context/favorites";
 import mockedFavorites from "../../__mocks__/mockedFavorites";
+import '../../__mocks__/intersectionObserverMock'
 
 describe("testing ProjectsList component", () => {
 	it("correctly render h2 when no repository is present", () => {
@@ -10,7 +11,7 @@ describe("testing ProjectsList component", () => {
     );
 
 		const title = screen.getByRole("heading", { level: 2 });
-		expect(title.textContent).toBe("Não existem repositorios");
+		expect(title.textContent).toBe("Não existem repositórios");
 	});
 
   it("render the correct number of repos", () => {

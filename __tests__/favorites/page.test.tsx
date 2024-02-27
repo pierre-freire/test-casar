@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Favorites from "../../app/favorites/page";
 import FavoritesContext from "../../app/context/favorites";
 import mockedFavorites from "../__mocks__/mockedFavorites";
+import '../__mocks__/intersectionObserverMock'
 
 describe("testing Favorites page", () => {
 	it("correctly render heading 1", () => {
@@ -23,7 +24,7 @@ describe("testing Favorites page", () => {
     );
 
 		const title = screen.getByRole("heading", { level: 2 });
-		expect(title.textContent).toBe("Não existem repositorios");
+		expect(title.textContent).toBe("Não existem repositórios");
 	});
 
   it("correctly render all favorites from context", () => {
