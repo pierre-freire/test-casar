@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 export const Favorites_data = createContext();
 
-function FavoritesContext({ children }) {
-	const [favorites, setFavorites] = useState([]);
+function FavoritesContext({ children, value = [] }) {
+	const [favorites, setFavorites] = useState(value);
 
 	function addFavorite(elm) {
 		const newFavorites = [...favorites];
