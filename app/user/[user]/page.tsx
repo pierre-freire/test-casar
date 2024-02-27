@@ -68,7 +68,7 @@ export default function User({ params }: { params: { user: string } }) {
 	if (loading)
 		return (
 			<main className="w-full h-[400px] flex justify-center items-center">
-				<Loading />
+				<Loading size="medium" />
 			</main>
 		);
 
