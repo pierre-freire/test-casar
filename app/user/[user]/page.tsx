@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { searchUser, getUserRepos } from "@/util/API";
 import UserCard from "@/components/userCard";
 import ProjectsList from "@/components/projectsList";
@@ -15,7 +14,7 @@ interface IUserState {
 	twitter_username: string;
 }
 
-export default function User() {
+export default function User({ params }: { params: { user: string } }) {
 	const [userState, setUserState] = useState<IUserState>({
 		avatar_url: "",
 		bio: "",
@@ -36,12 +35,11 @@ export default function User() {
 	>();
 
 	const router = useRouter();
-	const searchParams = useSearchParams();
-	const user = searchParams.get("user");
+	const user = params.user;
 	const [loading, setLoading] = useState(true);
 
 	function redirectError() {
-		return router.push(`/not_found?user=${user}`);
+		return router.push(`/not_found/${user}`);
 	}
 
 	async function getUser() {
