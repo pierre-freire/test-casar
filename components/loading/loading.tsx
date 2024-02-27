@@ -1,7 +1,11 @@
 import styles from "./loading.module.css";
 
-function Loading() {
-	return <div className={styles.loading} />;
+interface ILoading {
+	size: "small" | "medium";
+}
+
+function Loading({ size = "medium" }: ILoading) {
+	return <div className={`${styles[size]} ${styles.loading}`} />;
 }
 
 export default Loading;

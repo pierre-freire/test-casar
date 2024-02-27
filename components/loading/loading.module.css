@@ -1,6 +1,14 @@
-.loading {
+.medium {
 	width: 200px;
 	height: 200px;
+}
+
+.small {
+	width: 60px;
+	height: 60px;
+}
+
+.loading {
 	border-radius: 50%;
 	border-top: 4px solid #32c0c6;
 	box-sizing: border-box;
