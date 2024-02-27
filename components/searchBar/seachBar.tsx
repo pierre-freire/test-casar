@@ -16,7 +16,7 @@ function SeachBar() {
 	}
 
 	function redirectSearch() {
-		router.push(`/user?user=${search}`);
+		router.push(`/user/${search}`);
 	}
 
 	return (

@@ -5,7 +5,7 @@ interface IUserCard {
 		avatar_url: string;
 		bio: string;
 		name: string;
-		twitter_username: string;
+		twitter_username?: string;
 	};
 }
 

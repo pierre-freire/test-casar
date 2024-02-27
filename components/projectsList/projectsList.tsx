@@ -1,15 +1,13 @@
 import ProjectsListItem from "./projectsListItem";
 
 interface IProjectsList {
-	repos: [
-		{
-			name: string;
-			id: number;
-			description: string;
-			language: string;
-			updated_at: Date;
-		}
-	];
+	repos?: Array<{
+		name: string;
+		id: number;
+		description: string;
+		language: string;
+		updated_at: Date;
+	}>;
 }
 
 function ProjectsList({ repos }: IProjectsList) {
