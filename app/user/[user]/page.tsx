@@ -61,6 +61,10 @@ export default function User({ params }: { params: { user: string } }) {
 	}
 
 	useEffect(() => {
+		document.title = "Usuário";
+	}, []);
+
+	useEffect(() => {
 		getUser();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);

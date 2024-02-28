@@ -25,6 +25,6 @@ describe("testing Not Found page", () => {
 
 	it("correctly render image", () => {
 		const { getByAltText } = render(<NotFound params={{ user: "not_found" }} />);
-		getByAltText("Picture of an alien been abducted");
+		expect(getByAltText("Picture of an alien been abducted")).toBeDefined();
 	});
 });

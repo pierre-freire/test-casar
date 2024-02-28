@@ -5,7 +5,7 @@ import UserCard from "@/components/userCard";
 describe("testing UserCard component", () => {
   it("correctly render user image", () => {
 		const { getByAltText } = render(<UserCard user={user} />);
-		getByAltText("Picture of the user")
+		expect(getByAltText("Picture of the user")).toBeDefined()
 	});
 
   it("correctly render heading 2", () => {
@@ -23,6 +23,6 @@ describe("testing UserCard component", () => {
   it("correctly render bio", () => {
 		render(<UserCard user={user} />)
 		const title = screen.getByText("generic bio");
-		expect(title.textContent).toBeTruthy();
+		expect(title.textContent).toBeDefined();
 	});
 });

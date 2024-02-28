@@ -2,10 +2,14 @@
 
 import ProjectsList from "@/components/projectsList/projectsList";
 import { Favorites_data } from "@/app/context/favorites";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Favorites() {
 	const { favorites } = useContext(Favorites_data);
+
+	useEffect(() => {
+		document.title = "Favoritos";
+	}, []);
 
 	return (
 		<main className="p-4 mt-2 flex flex-col items-center justify-center gap-2 text-slate-600 text-center">

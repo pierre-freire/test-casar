@@ -30,10 +30,14 @@ function SeachBar() {
 				onChange={(e) => setSearch(e.target.value)}
 				onKeyDown={(e) => handleEnter(e.key)}
 			/>
-			<button className="p-[10px]" onClick={redirectSearch}>
+			<button
+				className="p-[10px] cursor-pointer"
+				aria-label="Pesquisa"
+				onClick={redirectSearch}
+			>
 				<FontAwesomeIcon
 					icon={faMagnifyingGlass}
-					className="h-[20px] text-slate-500 "
+					className="h-[20px] text-slate-500"
 				/>
 			</button>
 		</div>

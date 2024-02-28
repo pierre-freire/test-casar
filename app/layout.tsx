@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "@/components/header";
 import FavoritesContext from "./context/favorites";

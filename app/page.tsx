@@ -1,5 +1,11 @@
 import Image from "next/image";
 import SearchImage from "../public/search.svg";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Teste Casar.com",
+	description: "Teste prático casar.com",
+};
 
 export default function Home() {
 	return (

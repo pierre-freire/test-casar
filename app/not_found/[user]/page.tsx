@@ -1,7 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import NotFoundImg from "../../../public/not_found.svg";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Não Encontrado",
+};
 
 export default function NotFound({ params }: { params: { user: string } }) {
 	return (

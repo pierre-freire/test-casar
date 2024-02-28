@@ -18,6 +18,7 @@ describe("testing Home page", () => {
 
 	it("correctly render image", () => {
 		const { getByAltText } = render(<Home />);
-		getByAltText("Picture of someone searching");
+
+		expect(getByAltText("Picture of someone searching")).toBeDefined()
 	});
 });

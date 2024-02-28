@@ -8,7 +8,7 @@ describe("testing FavoritesButton component", () => {
     );
 
 		const link = screen.getByRole("link");
-		expect(link).toBeTruthy();
+		expect(link).toBeDefined();
 	});
 
   it("correctly render text", () => {
@@ -17,6 +17,6 @@ describe("testing FavoritesButton component", () => {
     );
 
 		const link = screen.getByText("Favoritos");
-		expect(link).toBeTruthy();
+		expect(link).toBeDefined();
 	});
 });
